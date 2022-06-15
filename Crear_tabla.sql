@@ -37,3 +37,17 @@ Fecha char(8),
 CONSTRAINT fk_Client FOREIGN KEY (IDVendedor) REFERENCES Vendedores (Id),
 CONSTRAINT fk_Vendedor FOREIGN KEY (IDCliente) REFERENCES Clientes (Id),
 )
+
+/*
+Crear tabla comprobando que no exista ya en la DB
+*/
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `Id_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `Usuario` varchar(50) DEFAULT NULL,
+  `Nombre` varchar(50) DEFAULT NULL,
+  `Email` varchar(50) DEFAULT NULL,
+  `Pass` varchar(100) DEFAULT NULL,
+  `Acceso` int(11) DEFAULT NULL,
+  `Puesto` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`Id_usuario`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
